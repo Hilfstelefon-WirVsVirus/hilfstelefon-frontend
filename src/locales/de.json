@@ -1,5 +1,20 @@
 {
   "meta": {
-    "title": "Hilfstelefon"
+    "title": "Hilfstelefon",
+    "phone": "0800 7237019441"
+  },
+  "home": {
+    "main": "Ruf uns an und stelle deine Frage. Wir suchen dir eine Antwort und rufen dich zurück und vermitteln dir einen Helfer in deiner Nähe.",
+    "overlay": {
+      "hello": "Hallo?",
+      "main": "Wie können wir Menschen ohne Zugang zu sozialen Netzwerken mit anderen Menschen vernetzen?",
+      "help_us": "Hilf uns!",
+      "email_placeholder": "deine@email.de"
+    }
+  },
+  "navigation": {
+    "imprint": "Impressum",
+    "wirvsvirus": "#WirVsVirus",
+    "contribute": "Contribute"
   }
 }

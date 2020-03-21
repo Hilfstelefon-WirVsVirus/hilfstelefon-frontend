@@ -1,19 +1,82 @@
 <template>
-  <div class="home">
-    <h1> {{ $t('meta.title') }}</h1>
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="page-container home">
+    <Header />
+    <main>
+      <div class="content">
+        <div class="content__logo logo">
+          <img class="logo__image" src="/img/icons/landing_graphic.svg" :alt="$t('meta.title')" />
+        </div>
+        <div class="content__text">{{ $t('home.main') }}</div>
+      </div>
+      <Card>
+        <RegistrationForm />
+        <Navigation />
+      </Card>
+    </main>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import RegistrationForm from '../components/RegistrationForm.vue';
+import Navigation from '../components/Navigation.vue';
+import Card from '../components/Card.vue';
+import Header from '../components/Header.vue';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
+    Card, Header, RegistrationForm, Navigation,
   },
 };
 </script>
+
+<style lang="scss">
+  .page-container {
+    &.home main {
+      margin: 0 auto;
+
+      @media #{$desktop} {
+        max-width: 800px;
+      }
+
+      @media #{$tablet} {
+        max-width: 600px;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px auto;
+    padding: 0;
+    max-width: 300px;
+
+    @media #{$desktop} {
+      max-width: 400px;
+    }
+
+    &__logo {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__text {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+
+  .logo {
+    margin-bottom: 10px;
+
+    &__image {
+      max-width: 50%;
+
+      @media #{$desktop} {
+        max-width: 100%;
+      }
+    }
+  }
+</style>
