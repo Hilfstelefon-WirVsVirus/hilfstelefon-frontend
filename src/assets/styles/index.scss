@@ -4,10 +4,36 @@
 "_fonts.scss";
 
 body {
-    color: $primary;
-    font-family: 'Lato', 'sans-serif';
+  color: $primary;
+  font-family: 'Lato', 'sans-serif';
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+h1, h2 ,h3 ,h4 ,h5 ,h6 {
+  font-family: 'Baloo 2', 'sans-serif';
+}
+
+.page-container {
+  margin: auto;
+  max-width: 1200px;
+
+  &.home main {
+    margin: 0 auto;
+
+    @media #{$desktop} {
+      max-width: 800px;
+    }
+
+    @media #{$tablet} {
+      max-width: 600px;
+    }
+  }
 }
