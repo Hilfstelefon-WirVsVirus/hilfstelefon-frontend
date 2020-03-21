@@ -1,0 +1,39 @@
+/* baloo-2-regular - latin */
+@font-face {
+    font-family: 'Baloo 2';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/baloo-2-v1-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Baloo 2 Regular'), local('Baloo2-Regular'),
+         url('/static/fonts/baloo-2-v1-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/static/fonts/baloo-2-v1-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/static/fonts/baloo-2-v1-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('/static/fonts/baloo-2-v1-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/static/fonts/baloo-2-v1-latin-regular.svg#Baloo2') format('svg'); /* Legacy iOS */
+  }
+  /* lato-regular - latin */
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/static/fonts/lato-v16-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Lato Regular'), local('Lato-Regular'),
+         url('/static/fonts/lato-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/static/fonts/lato-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/static/fonts/lato-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('/static/fonts/lato-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/static/fonts/lato-v16-latin-regular.svg#Lato') format('svg'); /* Legacy iOS */
+  }
+  /* lato-700 - latin */
+  @font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    src: url('/static/fonts/lato-v16-latin-700.eot'); /* IE9 Compat Modes */
+    src: local('Lato Bold'), local('Lato-Bold'),
+         url('/static/fonts/lato-v16-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('/static/fonts/lato-v16-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('/static/fonts/lato-v16-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('/static/fonts/lato-v16-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('/static/fonts/lato-v16-latin-700.svg#Lato') format('svg'); /* Legacy iOS */
+  }

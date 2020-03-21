@@ -1,3 +1,13 @@
-@import "_variables.scss",
+@import "_normalize.scss",
+"_variables.scss",
 "_colors.scss",
 "_fonts.scss";
+
+body {
+    color: $primary;
+    font-family: 'Lato', 'sans-serif';
+}
+
+* {
+    box-sizing: border-box;
+}
