@@ -27,18 +27,37 @@ export default {
 
 <style lang="scss" scoped>
   .navigation {
-    font-size: 24px;
+    display: flex;
+    justify-content: center;
     margin-top: 50px;
+
+    @media #{$mobile} {
+      font-size: 24px;
+    }
 
     &__list {
       list-style: none;
       margin: 0;
       padding: 0;
+
+      @media #{$desktop}, #{$tablet} {
+        display: flex;
+      }
     }
 
     &__list-item {
       margin-bottom: 20px;
       text-align: center;
+
+      @media #{$desktop}, #{$tablet} {
+        margin-bottom: 0;
+        padding: 0 15px;
+        border-right: 1px solid;
+
+        &:last-child {
+          border-right: none;
+        }
+      }
 
       &:last-child {
         margin: 0;
