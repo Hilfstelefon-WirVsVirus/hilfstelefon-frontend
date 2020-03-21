@@ -31,20 +31,6 @@ export default {
 </script>
 
 <style lang="scss">
-  .page-container {
-    &.home main {
-      margin: 0 auto;
-
-      @media #{$desktop} {
-        max-width: 800px;
-      }
-
-      @media #{$tablet} {
-        max-width: 600px;
-      }
-    }
-  }
-
   .content {
     display: flex;
     flex-wrap: wrap;
