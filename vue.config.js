@@ -7,4 +7,13 @@ module.exports = {
       enableInSFC: false,
     },
   },
+  css: {
+    loaderOptions: {
+      sass: {
+        prependData: `
+          @import "@/assets/styles/index.scss";
+        `,
+      },
+    },
+  },
 };
