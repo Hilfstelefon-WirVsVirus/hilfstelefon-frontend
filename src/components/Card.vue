@@ -17,6 +17,6 @@ export default {
     box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.25);
     padding: 30px 20px;
     margin: 0 5px;
-    text-align: left;
+    text-align: center;
   }
 </style>
