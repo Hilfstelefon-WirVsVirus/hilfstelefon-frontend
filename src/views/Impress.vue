@@ -181,6 +181,26 @@ export default {
           },
         ],
       },
+      {
+        name: 'Sascha Ritter',
+        image: '/img/users/Sascha.jpg',
+        links: [
+          {
+            url: '//github.com/sascharitter',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Paul Lorenz',
+        image: '/img/users/Paul.jpg',
+        links: [
+          {
+            url: '//github.com/pl0renz',
+            pretty: 'GitHub',
+          },
+        ],
+      },
       ];
       return this.shuffleArray(users);
     },
