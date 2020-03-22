@@ -13,35 +13,10 @@
         <Navigation />
       </Card>
     </main>
-    <IssueCard
-      headline="Einkaufshilfe"
-      text="test"
-      city="Bremen"
-      zip="28203"
-      state="CARD:OPEN"/>
-    <IssueCard
-      headline="Nur Reden"
-      text="test"
-      city="Bremen"
-      zip="28203"
-      state="CARD:CLOSED"/>
-    <IssueCard
-      headline="Frage"
-      text="test"
-      city="Bremen"
-      zip="28203"
-      state="CARD:PROGRESS"/>
-    <IssueCard
-      headline="Frage"
-      text="test"
-      city="Bremen"
-      zip="28203"
-      state="CARD:UNASSIGNED"/>
   </div>
 </template>
 
 <script>
-import IssueCard from '@/components/IssueCard.vue';
 import RegistrationForm from '../components/RegistrationForm.vue';
 import Navigation from '../components/Navigation.vue';
 import Card from '../components/Card.vue';
@@ -50,7 +25,7 @@ import Header from '../components/Header.vue';
 export default {
   name: 'Home',
   components: {
-    Card, Header, IssueCard, RegistrationForm, Navigation,
+    Card, Header, RegistrationForm, Navigation,
   },
 };
 </script>
