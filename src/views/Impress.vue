@@ -10,7 +10,7 @@
       </div>
       <Card>
         <div class="users">
-          <UserCard v-for="user in users" :user="user" :key="user.name" />
+          <UserCard v-for="user in users" :user="user" :key="user.name"/>
         </div>
       </Card>
       <h1>Impressum</h1>
@@ -21,8 +21,8 @@
         28219 Bremen</p>
 
       <h2>Kontakt</h2>
-      <p>Telefon: &#91;Telefonnummer&#93;<br/>
-        E-Mail: johannes+wirvsvirus@konze.it</p>
+      <p>
+        E-Mail: team@hilfstelefon.de</p>
       <h3>Haftung f&uuml;r Inhalte</h3>
       <p>
         Als Diensteanbieter sind wir
@@ -120,8 +120,8 @@ export default {
         image: '/img/users/felix.jpg',
         links: [
           {
-            url: '//fwagner.de',
-            pretty: 'portfolio',
+            url: '//bottlebase.com',
+            pretty: 'bottlebase',
           },
           {
             url: '//github.com/felex0982',
@@ -144,6 +144,16 @@ export default {
         ],
       },
       {
+        name: 'Tim G. Lücke',
+        image: '/img/users/Tim.jpg',
+        links: [
+          {
+            url: '//github.com/TimsHisProjects',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
         name: 'Markus Willems',
         image: '/img/users/Markus.jpg',
         links: [
@@ -156,7 +166,62 @@ export default {
             pretty: 'GitHub',
           },
         ],
-      }];
+      },
+      {
+        name: 'Tom Beyer',
+        image: '/img/users/Tom.jpg',
+        links: [
+          {
+            url: '//github.com/betom84',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Daniel Köhler',
+        image: '/img/users/Daniel.jpg',
+        links: [
+          {
+            url: '//koehdaniel.de',
+            pretty: 'koehdaniel.de',
+          },
+          {
+            url: '//github.com/koehdaniel',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Sascha Ritter',
+        image: '/img/users/Sascha.jpg',
+        links: [
+          {
+            url: '//github.com/sascharitter',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Paul Lorenz',
+        image: '/img/users/Paul.jpg',
+        links: [
+          {
+            url: '//github.com/pl0renz',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Jan Wiedenhoff',
+        image: '/img/users/Janpeter.jpg',
+        links: [
+          {
+            url: '//linkedin.com/in/janwiedenhoff/',
+            pretty: 'Linked.in',
+          },
+        ],
+      },
+      ];
       return this.shuffleArray(users);
     },
   },

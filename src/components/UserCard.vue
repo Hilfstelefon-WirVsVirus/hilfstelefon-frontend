@@ -25,6 +25,7 @@ export default {
 <style lang="scss" scoped>
 
     .user-card {
+        width: 260px;
         display: inline-block;
         border-radius: 13px;
         box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
