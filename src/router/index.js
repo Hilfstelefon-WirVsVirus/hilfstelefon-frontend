@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import Dashboard from '../views/Dashboard.vue';
 import MyTasks from '../views/MyTasks.vue';
 import AllTasks from '../views/AllTasks.vue';
 import EditTask from '../views/EditTask.vue';
@@ -17,7 +16,7 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard,
+    component: () => import(/* webpackChunkName: "dashboard" */ '../views/Dashboard.vue'),
     children: [
       {
         path: '',
