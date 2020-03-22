@@ -20,7 +20,9 @@
     </div>
     <button
       class="issue-card__assign"
-      v-if="state === cardStates.UNASSIGNED">
+      v-if="state === cardStates.UNASSIGNED"
+      @click="handleButtonClick"
+    >
       <span class="issue-card__assign__label">Übernehmen</span>
       <img alt="add-icon" src="/img/icons/plus.svg">
     </button>
@@ -29,11 +31,13 @@
 
 <script>
 import WaveSurfer from 'wavesurfer.js';
+import { mapActions } from 'vuex';
 import CardState from '../utils/CardStates';
 
 export default {
   name: 'IssueCard',
   props: {
+    taskId: Number,
     headline: String,
     text: String,
     city: String,
@@ -63,6 +67,14 @@ export default {
     },
     cardStates() {
       return CardState;
+    },
+  },
+  methods: {
+    ...mapActions([
+      'selectTask',
+    ]),
+    handleButtonClick() {
+      this.selectTask(this.taskId);
     },
   },
   mounted() {
