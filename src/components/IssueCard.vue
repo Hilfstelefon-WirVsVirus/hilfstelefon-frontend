@@ -1,7 +1,11 @@
 <template>
-  <div class="issue-card">
+  <div class="issue-card" :class="issueCardState">
     <div
-      class="issue-card__local-info  location">
+      v-if="state !== cardStates.UNASSIGNED"
+      class="issue-card__status-bar"
+      :class="statusBarState">
+    </div>
+    <div class="issue-card__local-info location">
       <img class="location__icon" alt="local-icon" src="/img/icons/location-arrow.svg">
       <span class="location__city">{{ city }} / </span>
       <span class="location__plz">{{ zip }}</span>
@@ -14,7 +18,9 @@
         <img alt="play-icon" src="/img/icons/play.svg">
       </button>
     </div>
-    <button class="issue-card__assign">
+    <button
+      class="issue-card__assign"
+      v-if="state === cardStates.UNASSIGNED">
       <span class="issue-card__assign__label">Übernehmen</span>
       <img alt="add-icon" src="/img/icons/plus.svg">
     </button>
@@ -23,6 +29,7 @@
 
 <script>
 import WaveSurfer from 'wavesurfer.js';
+import CardState from '../utils/CardStates';
 
 export default {
   name: 'IssueCard',
@@ -32,11 +39,31 @@ export default {
     city: String,
     zip: String,
     audiofile: String,
+    state: String,
   },
   data() {
     return {
       $wavesurfer: null,
     };
+  },
+  computed: {
+    issueCardState() {
+      return {
+        'issue-card--open': this.state && this.state === CardState.OPEN,
+        'issue-card--progress': this.state && this.state === CardState.PROGRESS,
+        'issue-card--closed': this.state && this.state === CardState.CLOSED,
+      };
+    },
+    statusBarState() {
+      return {
+        'issue-card__status-bar--open': this.state && this.state === CardState.OPEN,
+        'issue-card__status-bar--progress': this.state && this.state === CardState.PROGRESS,
+        'issue-card__status-bar--closed': this.state && this.state === CardState.CLOSED,
+      };
+    },
+    cardStates() {
+      return CardState;
+    },
   },
   mounted() {
     const wavesurfer = WaveSurfer.create({
@@ -62,7 +89,44 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    position: relative;
+    overflow: hidden;
     @include shadow(10);
+
+    &--open {
+      background-color: #EDF2F7;
+      padding-left: 50px;
+    }
+
+    &--progress {
+      background-color: #FFF9EE;
+      padding-left: 50px;
+    }
+
+    &--closed {
+      background-color: #FFF0F7;
+      padding-left: 50px;
+    }
+
+    &__status-bar {
+      position: absolute;
+      height: 100%;
+      width: 20px;
+      left: 0;
+      top:0;
+
+      &--open {
+        background-color: #5B9989;
+      }
+
+      &--progress {
+        background-color: #DEB300;
+      }
+
+      &--closed {
+        background-color: #AA5B7B;
+      }
+    }
 
     &__headline {
       font-size: 30px;

@@ -14,10 +14,29 @@
       </Card>
     </main>
     <IssueCard
-      headline="Futter holen"
+      headline="Einkaufshilfe"
       text="test"
       city="Bremen"
-      zip="28203"/>
+      zip="28203"
+      state="CARD:OPEN"/>
+    <IssueCard
+      headline="Nur Reden"
+      text="test"
+      city="Bremen"
+      zip="28203"
+      state="CARD:CLOSED"/>
+    <IssueCard
+      headline="Frage"
+      text="test"
+      city="Bremen"
+      zip="28203"
+      state="CARD:PROGRESS"/>
+    <IssueCard
+      headline="Frage"
+      text="test"
+      city="Bremen"
+      zip="28203"
+      state="CARD:UNASSIGNED"/>
   </div>
 </template>
 
