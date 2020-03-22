@@ -1,12 +1,14 @@
 <template>
   <header class="header">
     <div class="header__logo logo">
+      <router-link class="header-link" to="/">
       <img
         class="logo__image"
         src="/img/icons/logo.svg"
         :alt="$t('meta.title')"
       />
       <h1 class="logo__text">{{ $t('meta.title') }}</h1>
+      </router-link>
     </div>
     <h2 class="header__phone phone">
       <a class="phone__link" :href="phone">{{ $t('meta.phone') }}</a>
@@ -56,7 +58,9 @@ export default {
       }
     }
   }
-
+  .header-link {
+    display: flex;
+  }
   .logo {
     display: flex;
     justify-content: center;
