@@ -30,7 +30,6 @@ export default new Vuex.Store({
     },
     SET_FILTER(state, { filterName, filterValue }) {
       state.filters[filterName] = filterValue;
-      console.log(state.filters);
     },
     SET_FILTERED_TASKS(state, tasks) {
       state.filteredTasks = tasks;
@@ -41,9 +40,7 @@ export default new Vuex.Store({
       let { tasks } = state;
       const filters = Object.keys(state.filters);
       filters.forEach((filter) => {
-        console.log('yyy');
         if (state.filters[filter] && state.filters[filter] !== '') {
-          console.log(state.filters[filter]);
           tasks = tasks.filter((task) => task[filter].includes(state.filters[filter]));
         }
       });
