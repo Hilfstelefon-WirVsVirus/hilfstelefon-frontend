@@ -13,33 +13,15 @@
           <h2 class="listings-content__title">
             {{ $t('dashboard.open_requests')}}
           </h2>
-          <ul>
-            <li v-for="task in allTasks" :key="task.id">{{ task.transcription }}</li>
-          </ul>
           <IssueCard
-            headline="Einkaufshilfe"
-            text="test"
-            city="Bremen"
-            zip="28203"
-            state="CARD:OPEN"/>
-          <IssueCard
-            headline="Nur Reden"
-            text="test"
-            city="Bremen"
-            zip="28203"
-            state="CARD:CLOSED"/>
-          <IssueCard
-            headline="Frage"
-            text="test"
-            city="Bremen"
-            zip="28203"
-            state="CARD:PROGRESS"/>
-          <IssueCard
-            headline="Frage"
-            text="test"
-            city="Bremen"
-            zip="28203"
-            state="CARD:UNASSIGNED"/>
+            v-for="task in unassignedTasks" :key="task.id"
+            :taskId="task.id"
+            :headline="task.category"
+            :text="task.transcription"
+            :city="task.city"
+            :zip="task.zip"
+            :state="task.status"
+          />
         </div>
       </div>
     </div>
@@ -62,7 +44,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'allTasks',
+      'unassignedTasks',
     ]),
   },
   mounted() {
