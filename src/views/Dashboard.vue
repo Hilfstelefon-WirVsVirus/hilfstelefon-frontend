@@ -16,6 +16,30 @@
           <ul>
             <li v-for="task in allTasks" :key="task.id">{{ task.transcription }}</li>
           </ul>
+          <IssueCard
+            headline="Einkaufshilfe"
+            text="test"
+            city="Bremen"
+            zip="28203"
+            state="CARD:OPEN"/>
+          <IssueCard
+            headline="Nur Reden"
+            text="test"
+            city="Bremen"
+            zip="28203"
+            state="CARD:CLOSED"/>
+          <IssueCard
+            headline="Frage"
+            text="test"
+            city="Bremen"
+            zip="28203"
+            state="CARD:PROGRESS"/>
+          <IssueCard
+            headline="Frage"
+            text="test"
+            city="Bremen"
+            zip="28203"
+            state="CARD:UNASSIGNED"/>
         </div>
       </div>
     </div>
@@ -24,6 +48,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import IssueCard from '@/components/IssueCard.vue';
 
 export default {
   name: 'Dashboard',
@@ -31,6 +56,9 @@ export default {
     ...mapActions([
       'setTasks',
     ]),
+  },
+  components: {
+    IssueCard,
   },
   computed: {
     ...mapGetters([
