@@ -11,6 +11,8 @@ export default new Vuex.Store({
     email: '',
     tasks: [],
     selectedTasks: [],
+    filters: {},
+    filteredTasks: [],
   },
   mutations: {
     IS_LOADING(state, status) {
@@ -26,8 +28,27 @@ export default new Vuex.Store({
       const selectedTask = state.tasks.find((task) => task.id === taskId);
       state.selectedTasks = [...new Set([...state.selectedTasks, selectedTask])];
     },
+    SET_FILTER(state, { filterName, filterValue }) {
+      state.filters[filterName] = filterValue;
+      console.log(state.filters);
+    },
+    SET_FILTERED_TASKS(state, tasks) {
+      state.filteredTasks = tasks;
+    },
   },
   actions: {
+    updateTasks({ commit, state }) {
+      let { tasks } = state;
+      const filters = Object.keys(state.filters);
+      filters.forEach((filter) => {
+        console.log('yyy');
+        if (state.filters[filter] && state.filters[filter] !== '') {
+          console.log(state.filters[filter]);
+          tasks = tasks.filter((task) => task[filter].includes(state.filters[filter]));
+        }
+      });
+      commit('SET_FILTERED_TASKS', tasks);
+    },
     setEmail({ commit }, email) {
       return commit('SET_EMAIL', email);
     },
@@ -35,6 +56,7 @@ export default new Vuex.Store({
       return Vue.axios.get(TASKS_ENDPOINT)
         .then(({ data }) => {
           commit('SET_TASKS', data);
+          commit('SET_FILTERED_TASKS', data);
         });
     },
     selectTask({ commit }, taskId) {
@@ -48,5 +70,7 @@ export default new Vuex.Store({
     openTasks: (state) => state.tasks.filter((task) => task.status === 'OPEN'),
     unassignedTasks: (state) => state.tasks.filter((task) => task.status === 'UNASSIGNED'),
     inProgressTasks: (state) => state.tasks.filter((task) => task.status === 'PROGRESS'),
+    filteredTasks: (state) => state.filteredTasks,
   },
+  modules: {},
 });
