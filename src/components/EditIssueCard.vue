@@ -1,9 +1,8 @@
 <template>
-  <div class="issue-card" :class="issueCardState">
+  <div class="issue-card">
     <div
-      v-if="state !== cardStates.UNASSIGNED"
       class="issue-card__status-bar"
-      :class="statusBarState">
+    >
     </div>
     <div class="issue-card__local-info location">
       <img class="location__icon" alt="local-icon" src="/img/icons/location-arrow.svg">
@@ -18,21 +17,12 @@
         <img alt="play-icon" src="/img/icons/play.svg">
       </button>
     </div>
+    <h3 class="issue-card__headline">Deine Antwort</h3>
+    <textarea class="issue-card__answer"></textarea>
     <button
       class="issue-card__btn"
-      v-if="state === cardStates.UNASSIGNED"
-      @click="handleAssignClick"
     >
-      <span class="issue-card__btn__label">Übernehmen</span>
-      <img alt="add-icon" src="/img/icons/plus.svg">
-    </button>
-    <button
-      class="issue-card__btn"
-      v-if="state !== cardStates.UNASSIGNED"
-      @click="handleEditClick"
-    >
-      <span class="issue-card__btn__label">Bearbeiten</span>
-      <img alt="add-icon" src="/img/icons/plus.svg">
+      <span class="issue-card__btn__label">Senden</span>
     </button>
   </div>
 </template>
@@ -40,7 +30,6 @@
 <script>
 import WaveSurfer from 'wavesurfer.js';
 import { mapActions } from 'vuex';
-import cardStates from '../utils/cardStates';
 
 export default {
   name: 'IssueCard',
@@ -57,25 +46,6 @@ export default {
     return {
       $wavesurfer: null,
     };
-  },
-  computed: {
-    issueCardState() {
-      return {
-        'issue-card--open': this.state && this.state === cardStates.OPEN,
-        'issue-card--progress': this.state && this.state === cardStates.PROGRESS,
-        'issue-card--closed': this.state && this.state === cardStates.CLOSED,
-      };
-    },
-    statusBarState() {
-      return {
-        'issue-card__status-bar--open': this.state && this.state === cardStates.OPEN,
-        'issue-card__status-bar--progress': this.state && this.state === cardStates.PROGRESS,
-        'issue-card__status-bar--closed': this.state && this.state === cardStates.CLOSED,
-      };
-    },
-    cardStates() {
-      return cardStates;
-    },
   },
   methods: {
     ...mapActions([
@@ -105,16 +75,12 @@ export default {
   .issue-card {
     width: 100%;
     max-width: 800px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #EDF2F7;
-    border-radius: 21px;
+    margin: 10px auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: relative;
     overflow: hidden;
-    @include shadow(10);
 
     &--open {
       background-color: #EDF2F7;
@@ -179,6 +145,16 @@ export default {
       &__label {
         padding-right: 10px;
       }
+    }
+
+    &__answer {
+        border-radius: 15px;
+        width: 100%;
+        height: 150px;
+        outline: none;
+        padding: 10px;
+        border-color: #999;
+        color: #999;
     }
   }
 

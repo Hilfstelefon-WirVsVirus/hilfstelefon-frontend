@@ -38,8 +38,8 @@ export default {
     ]),
     handleSubmit() {
       if (this.email) {
-        this.$router.push({ path: 'dashboard' });
         this.setEmail(this.email);
+        this.$router.push({ path: 'dashboard' });
       }
     },
   },

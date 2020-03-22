@@ -1,9 +1,10 @@
 <template>
   <div>
     <h2 class="listings-content__title">
-      {{ $t('dashboard.question_for_you')}}
+      {{ $t('dashboard.open_requests')}}
     </h2>
-    <EditIssueCard
+    <IssueCard
+      v-for="task in filteredTasks" :key="task.id"
       :taskId="task.id"
       :headline="task.category"
       :text="task.transcription"
@@ -15,19 +16,16 @@
 </template>
 
 <script>
+import IssueCard from '@/components/IssueCard.vue';
 import { mapGetters } from 'vuex';
-import EditIssueCard from '@/components/EditIssueCard.vue';
 
 export default {
-  name: 'EditTask',
-  components: { EditIssueCard },
+  name: 'AllTasks',
+  components: { IssueCard },
   computed: {
     ...mapGetters([
-      'selectedTasks',
+      'filteredTasks',
     ]),
-    task() {
-      return this.selectedTasks.find((task) => task.id === Number(this.$route.params.id));
-    },
   },
 };
 </script>

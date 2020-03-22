@@ -20,7 +20,11 @@
   "dashboard": {
     "title": "Dashboard",
     "filter": "Filter",
-    "open_requests": "Offene Anfragen"
+    "open_requests": "Offene Anfragen",
+    "my_requests": "Offene Anfragen > Deine Anfragen",
+    "edit_request": "Offene Anfragen > Deine Anfragen > Bearbeiten",
+    "question_for_you": "Frage an dich",
+    "questions_for_you": "Fragen an dich"
   },
   "filter": {
     "zip": "PLZ",
