@@ -1,27 +1,16 @@
 <template>
   <div class="page-container dashboard">
-    <h1>{{ $t('dashboard.title') }}</h1>
+    <DashboardNavigation />
     <div class="dashboard-content">
       <div class="filter-bar">
         <h2>{{ $t('dashboard.filter')}}</h2>
       </div>
       <div class="listings">
         <header class="listings__title">
-          {{ $t('dashboard.open_requests')}}
+          {{ heading }}
         </header>
         <div class="listings__content listings-content">
-          <h2 class="listings-content__title">
-            {{ $t('dashboard.open_requests')}}
-          </h2>
-          <IssueCard
-            v-for="task in unassignedTasks" :key="task.id"
-            :taskId="task.id"
-            :headline="task.category"
-            :text="task.transcription"
-            :city="task.city"
-            :zip="task.zip"
-            :state="task.status"
-          />
+          <router-view></router-view>
         </div>
       </div>
     </div>
@@ -29,23 +18,29 @@
 </template>
 
 <script>
-import { mapActions, mapGetters } from 'vuex';
-import IssueCard from '@/components/IssueCard.vue';
+import { mapActions } from 'vuex';
+import DashboardNavigation from '../components/DashboardNavigation.vue';
 
 export default {
   name: 'Dashboard',
+  components: { DashboardNavigation },
   methods: {
     ...mapActions([
       'setTasks',
     ]),
   },
-  components: {
-    IssueCard,
-  },
   computed: {
-    ...mapGetters([
-      'unassignedTasks',
-    ]),
+    heading() {
+      let text = '';
+      if (this.$route.path.includes('mytasks')) {
+        text = this.$t('dashboard.my_requests');
+      } else if (this.$route.path.includes('edit')) {
+        text = this.$t('dashboard.edit_request');
+      } else {
+        text = this.$t('dashboard.open_requests');
+      }
+      return text;
+    },
   },
   mounted() {
     this.setTasks();
@@ -53,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .dashboard-content {
     width: 100%;
     display: flex;

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import cardStates from '../utils/cardStates';
 
 Vue.use(Vuex);
 
@@ -24,7 +25,10 @@ export default new Vuex.Store({
     },
     SELECT_TASK(state, taskId) {
       const selectedTask = state.tasks.find((task) => task.id === taskId);
-      state.selectedTasks = [...new Set([...state.selectedTasks, selectedTask])];
+      state.selectedTasks = [...new Set([...state.selectedTasks, selectedTask])].map((task) => ({
+        ...task,
+        status: cardStates.OPEN,
+      }));
     },
   },
   actions: {
