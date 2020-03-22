@@ -4,7 +4,7 @@
       <h2 class="info__heading">{{ $t('home.overlay.hello') }}</h2>
       <div class="info__text">{{ $t('home.overlay.main') }}</div>
     </div>
-    <form>
+    <form @submit.prevent="handleSubmit">
       <label for="email">
         <h2 class="registation-form__heading">{{ $t('home.overlay.help_us') }}</h2>
       </label>
@@ -23,12 +23,25 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   name: 'RegistationForm',
   data() {
     return {
       email: '',
     };
+  },
+  methods: {
+    ...mapActions([
+      'setEmail',
+    ]),
+    handleSubmit() {
+      if (this.email) {
+        this.$router.push({ path: 'dashboard' });
+        this.setEmail(this.email);
+      }
+    },
   },
 };
 </script>

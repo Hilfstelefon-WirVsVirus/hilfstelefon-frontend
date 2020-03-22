@@ -16,5 +16,8 @@
     "imprint": "Impressum",
     "wirvsvirus": "#WirVsVirus",
     "contribute": "Contribute"
+  },
+  "dashboard": {
+    "title": "Dashboard"
   }
 }
