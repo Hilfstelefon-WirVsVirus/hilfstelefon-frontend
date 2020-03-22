@@ -7,7 +7,7 @@
           <h2>{{ $t('dashboard.filter')}}</h2>
         </div>
         <div class="listings">
-          <header class="listings__title">
+          <header>
             {{ $t('dashboard.open_requests')}}
           </header>
           <div class="listings__content listings-content">
@@ -25,6 +25,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import IssueCard from '@/components/IssueCard.vue';
 import Header from '../components/Header.vue';
 
 export default {
@@ -36,6 +37,7 @@ export default {
   },
   components: {
     Header,
+    IssueCard,
   },
   computed: {
     ...mapGetters([
