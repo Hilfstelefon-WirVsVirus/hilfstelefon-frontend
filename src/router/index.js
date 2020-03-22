@@ -34,9 +34,9 @@ const routes = [
     ],
   },
   {
-    path: '/impress',
-    name: 'Impress',
-    component: () => import(/* webpackChunkName: "impress" */ '../views/Impress.vue'),
+    path: '/imprint',
+    name: 'Imprint',
+    component: () => import(/* webpackChunkName: "imprint" */ '../views/Imprint.vue'),
   },
 ];
 

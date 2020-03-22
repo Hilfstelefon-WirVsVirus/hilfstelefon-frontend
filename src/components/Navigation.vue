@@ -2,7 +2,7 @@
     <nav class="navigation">
       <ul class="navigation__list">
         <li class="navigation__list-item">
-          <router-link to="/impress">{{ $t('navigation.imprint') }}</router-link>
+          <router-link to="/imprint">{{ $t('navigation.imprint') }}</router-link>
         </li>
         <li class="navigation__list-item">
           <a href="//wirvsvirushackathon.org/" class="navigation__link">
@@ -31,6 +31,9 @@ export default {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
 
     @media #{$mobile} {
       font-size: 24px;

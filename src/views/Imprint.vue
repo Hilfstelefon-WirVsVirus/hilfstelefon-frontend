@@ -6,7 +6,7 @@
         <div class="content__logo logo">
           <img class="logo__image" src="/img/icons/landing_graphic.svg" :alt="$t('meta.title')"/>
         </div>
-        <div class="content__text">{{ $t('impress.intro') }}</div>
+        <div class="content__text">{{ $t('imprint.intro') }}</div>
       </div>
       <Card>
         <div class="users">
