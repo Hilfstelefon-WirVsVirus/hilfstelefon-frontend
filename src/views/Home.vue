@@ -13,10 +13,16 @@
         <Navigation />
       </Card>
     </main>
+    <IssueCard
+      headline="Futter holen"
+      text="test"
+      city="Bremen"
+      zip="28203"/>
   </div>
 </template>
 
 <script>
+import IssueCard from '@/components/IssueCard.vue';
 import RegistrationForm from '../components/RegistrationForm.vue';
 import Navigation from '../components/Navigation.vue';
 import Card from '../components/Card.vue';
@@ -25,7 +31,7 @@ import Header from '../components/Header.vue';
 export default {
   name: 'Home',
   components: {
-    Card, Header, RegistrationForm, Navigation,
+    Card, Header, IssueCard, RegistrationForm, Navigation,
   },
 };
 </script>

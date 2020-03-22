@@ -101,8 +101,13 @@ export default {
 
     &__image {
       width: 20px;
-      filter: invert(100%)
-        sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+      filter:
+        invert(100%)
+        sepia(0%)
+        saturate(0%)
+        hue-rotate(93deg)
+        brightness(103%)
+        contrast(103%);
     }
   }
 </style>
