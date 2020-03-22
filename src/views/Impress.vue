@@ -10,7 +10,7 @@
       </div>
       <Card>
         <div class="users">
-          <UserCard v-for="user in users" :user="user" :key="user.name" />
+          <UserCard v-for="user in users" :user="user" :key="user.name"/>
         </div>
       </Card>
       <h1>Impressum</h1>
@@ -198,6 +198,16 @@ export default {
           {
             url: '//github.com/pl0renz',
             pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Jan Wiedenhoff',
+        image: '/img/users/Janpeter.jpg',
+        links: [
+          {
+            url: '//linkedin.com/in/janwiedenhoff/',
+            pretty: 'Linked.in',
           },
         ],
       },
