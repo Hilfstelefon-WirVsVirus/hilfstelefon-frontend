@@ -10,7 +10,7 @@
     <p class="issue-card__text">{{ text }}</p>
     <div class="issue-card__record record">
       <div class="record__waveform" ref="waveformcontainer"></div>
-      <button @click="$wavesurfer.play()" class="record__playbutton">
+      <button @click="$wavesurfer.playPause()" class="record__playbutton">
         <img alt="play-icon" src="/img/icons/play.svg">
       </button>
     </div>
