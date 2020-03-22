@@ -144,6 +144,16 @@ export default {
         ],
       },
       {
+        name: 'Tim G. Lücke',
+        image: '/img/users/Tim.jpg',
+        links: [
+          {
+            url: '//github.com/TimsHisProjects',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
         name: 'Markus Willems',
         image: '/img/users/Markus.jpg',
         links: [
