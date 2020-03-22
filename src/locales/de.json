@@ -18,6 +18,17 @@
     "contribute": "Contribute"
   },
   "dashboard": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "filter": "Filter",
+    "open_requests": "Offene Anfragen"
+  },
+  "filter": {
+    "zip": "PLZ",
+    "city": "Ort",
+    "questions": "Fragen",
+    "support": "Unterstüzung"
+  },
+  "impress": {
+    "intro": "Intro"
   }
 }
