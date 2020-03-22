@@ -17,6 +17,7 @@ export default {
     padding: 30px 20px;
     margin: 0 5px;
     text-align: center;
+    height: 400px;
     @include shadow(30);
   }
 </style>

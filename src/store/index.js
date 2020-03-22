@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import cardStates from '../utils/cardStates';
 
 Vue.use(Vuex);
 
@@ -26,7 +27,10 @@ export default new Vuex.Store({
     },
     SELECT_TASK(state, taskId) {
       const selectedTask = state.tasks.find((task) => task.id === taskId);
-      state.selectedTasks = [...new Set([...state.selectedTasks, selectedTask])];
+      state.selectedTasks = [...new Set([...state.selectedTasks, selectedTask])].map((task) => ({
+        ...task,
+        status: cardStates.OPEN,
+      }));
     },
     SET_FILTER(state, { filterName, filterValue }) {
       state.filters[filterName] = filterValue;
@@ -68,6 +72,7 @@ export default new Vuex.Store({
     unassignedTasks: (state) => state.tasks.filter((task) => task.status === 'UNASSIGNED'),
     inProgressTasks: (state) => state.tasks.filter((task) => task.status === 'PROGRESS'),
     filteredTasks: (state) => state.filteredTasks,
+    isLoading: (state) => state.isLoading,
   },
   modules: {},
 });
