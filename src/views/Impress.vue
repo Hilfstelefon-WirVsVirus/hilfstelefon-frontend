@@ -21,8 +21,8 @@
         28219 Bremen</p>
 
       <h2>Kontakt</h2>
-      <p>Telefon: &#91;Telefonnummer&#93;<br/>
-        E-Mail: johannes+wirvsvirus@konze.it</p>
+      <p>
+        E-Mail: team@hilfstelefon.de</p>
       <h3>Haftung f&uuml;r Inhalte</h3>
       <p>
         Als Diensteanbieter sind wir
