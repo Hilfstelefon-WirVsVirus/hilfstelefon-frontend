@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import cardStates from '../utils/cardStates';
+import cardStates from '../utils/states';
 
 Vue.use(Vuex);
 

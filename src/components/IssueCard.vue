@@ -40,7 +40,7 @@
 <script>
 import WaveSurfer from 'wavesurfer.js';
 import { mapActions } from 'vuex';
-import cardStates from '../utils/cardStates';
+import cardStates from '../utils/states';
 
 export default {
   name: 'IssueCard',
