@@ -3,6 +3,7 @@
     <h2 class="listings-content__title">
       {{ $t('dashboard.open_requests')}}
     </h2>
+    <div class="listings-content__loading" v-if="isLoading">Lade Anfragen...</div>
     <IssueCard
       v-for="task in filteredTasks" :key="task.id"
       :taskId="task.id"
@@ -25,6 +26,7 @@ export default {
   computed: {
     ...mapGetters([
       'filteredTasks',
+      'isLoading',
     ]),
   },
 };

@@ -167,6 +167,11 @@ export default {
       padding: 0;
       font-size: 36px;
     }
+
+    &__loading {
+      font-size: 20px;
+      margin-top: 50px;
+    }
   }
   .filter {
     display: inline-block;

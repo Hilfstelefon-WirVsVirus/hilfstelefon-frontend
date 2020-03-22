@@ -72,6 +72,7 @@ export default new Vuex.Store({
     unassignedTasks: (state) => state.tasks.filter((task) => task.status === 'UNASSIGNED'),
     inProgressTasks: (state) => state.tasks.filter((task) => task.status === 'PROGRESS'),
     filteredTasks: (state) => state.filteredTasks,
+    isLoading: (state) => state.isLoading,
   },
   modules: {},
 });

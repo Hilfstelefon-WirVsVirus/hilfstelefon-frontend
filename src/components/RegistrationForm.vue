@@ -49,9 +49,9 @@ export default {
 <style lang="scss" scoped>
   .registation-form {
     &__heading {
+      font-size: 40px;
       margin: 0 0 15px;
     }
-
     &__input {
       border: none;
       padding: 5px 28px 5px 5px;
@@ -59,26 +59,23 @@ export default {
       font-style: italic;
       text-align: center;
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+      outline: none;
     }
-
     &__button {
       border: none;
       border-radius: 100%;
       background: #8FCDC1;
       color: #fff;
       width: 28px;
-      height: 28px;
+      height: 29px;
       margin-left: -28px;
     }
-
     &__info {
       max-width: 300px;
-
       @media #{$desktop} {
         max-width: 400px;
       }
     }
-
     .plus-icon {
       vertical-align: middle;
       margin-top: -3px;
@@ -86,15 +83,14 @@ export default {
         sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
     }
   }
-
   .info {
     margin: 0 auto;
-
     &__heading {
+      font-size: 40px;
       margin: 0 0 15px;
     }
-
     &__text {
+      font-size: 16px;
       margin-bottom: 20px;
     }
   }
