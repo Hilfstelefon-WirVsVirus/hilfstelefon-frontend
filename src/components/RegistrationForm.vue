@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scoped>
   .registation-form {
     &__heading {
+      font-size: 40px;
       margin: 0 0 15px;
     }
 
@@ -59,6 +60,7 @@ export default {
       font-style: italic;
       text-align: center;
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+      outline: none;
     }
 
     &__button {
@@ -91,10 +93,12 @@ export default {
     margin: 0 auto;
 
     &__heading {
+      font-size: 40px;
       margin: 0 0 15px;
     }
 
     &__text {
+      font-size: 16px;
       margin-bottom: 20px;
     }
   }

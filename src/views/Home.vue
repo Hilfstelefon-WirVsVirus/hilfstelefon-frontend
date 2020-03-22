@@ -39,7 +39,7 @@ export default {
     max-width: 300px;
 
     @media #{$desktop} {
-      max-width: 400px;
+      max-width: 600px;
     }
 
     &__logo {
@@ -51,6 +51,9 @@ export default {
     &__text {
       flex: 1 1 100%;
       text-align: center;
+      font-size: 20px;
+      line-height: 1.5;
+      margin-top: 40px;
     }
   }
 
@@ -61,7 +64,8 @@ export default {
       max-width: 50%;
 
       @media #{$desktop} {
-        max-width: 100%;
+        width: 100%;
+        max-width: 400px;
       }
     }
   }
