@@ -68,7 +68,6 @@ export default {
   components: {
     Header,
     IssueCard,
-    Header,
   },
   computed: {
     ...mapGetters([
