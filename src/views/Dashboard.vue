@@ -1,16 +1,13 @@
 <template>
-  <div class="page-container dashboard">
-    <h1>{{ $t('dashboard.title') }}</h1>
-    <div class="dashboard-content">
-      <div class="filter-bar">
-        <h2>{{ $t('dashboard.filter')}}</h2>
-      </div>
-      <div class="listings">
-        <header class="listings__title">
-          {{ $t('dashboard.open_requests')}}
-        </header>
-        <div class="listings__content listings-content">
-          <h2 class="listings-content__title">
+    <div class="page-container dashboard">
+    <Header/>
+      <h1>{{ $t('dashboard.title') }}</h1>
+      <div class="dashboard-content">
+        <div class="filter-bar">
+          <h2>{{ $t('dashboard.filter')}}</h2>
+        </div>
+        <div class="listings">
+          <h2 class="listings__title">
             {{ $t('dashboard.open_requests')}}
           </h2>
           <IssueCard
@@ -25,12 +22,12 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
 import IssueCard from '@/components/IssueCard.vue';
+import Header from '../components/Header.vue';
 
 export default {
   name: 'Dashboard',
@@ -41,6 +38,7 @@ export default {
   },
   components: {
     IssueCard,
+    Header,
   },
   computed: {
     ...mapGetters([

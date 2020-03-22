@@ -2,18 +2,19 @@
     <nav class="navigation">
       <ul class="navigation__list">
         <li class="navigation__list-item">
-          <router-link to="/impressum">{{ $t('navigation.imprint') }}</router-link>
+          <router-link to="/impress">{{ $t('navigation.imprint') }}</router-link>
         </li>
         <li class="navigation__list-item">
-          <router-link to="/wirvsvirus">{{ $t('navigation.wirvsvirus') }}</router-link>
+          <a href="//wirvsvirushackathon.org/" class="navigation__link">
+            {{ $t('navigation.wirvsvirus') }}
+          </a>
         </li>
         <li class="navigation__list-item">
-          <router-link
-            :class="navigation__link"
-            to="/contribute"
-          >
+          <a
+            class="navigation__link"
+            href="//github.com/Hilfstelefon-WirVsVirus">
             {{ $t('navigation.contribute') }}
-          </router-link>
+          </a>
         </li>
       </ul>
     </nav>
