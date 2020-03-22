@@ -42,9 +42,6 @@ export default {
       'unassignedTasks',
     ]),
   },
-  components: {
-    Header,
-  },
   mounted() {
     this.setTasks();
   },
