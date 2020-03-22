@@ -117,7 +117,7 @@ export default {
       },
       {
         name: 'Felix Wagner',
-        image: '/img/users/felix.jpg',
+        image: '/img/users/Felix.jpg',
         links: [
           {
             url: '//bottlebase.com',
