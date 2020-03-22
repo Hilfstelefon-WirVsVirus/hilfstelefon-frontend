@@ -120,8 +120,8 @@ export default {
         image: '/img/users/felix.jpg',
         links: [
           {
-            url: '//fwagner.de',
-            pretty: 'portfolio',
+            url: '//bottlebase.com',
+            pretty: 'bottlebase',
           },
           {
             url: '//github.com/felex0982',
@@ -156,7 +156,32 @@ export default {
             pretty: 'GitHub',
           },
         ],
-      }];
+      },
+      {
+        name: 'Tom Beyer',
+        image: '/img/users/Tom.jpg',
+        links: [
+          {
+            url: '//github.com/betom84',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      {
+        name: 'Daniel Köhler',
+        image: '/img/users/Daniel.jpg',
+        links: [
+          {
+            url: '//koehdaniel.de',
+            pretty: 'koehdaniel.de',
+          },
+          {
+            url: '//github.com/koehdaniel',
+            pretty: 'GitHub',
+          },
+        ],
+      },
+      ];
       return this.shuffleArray(users);
     },
   },
