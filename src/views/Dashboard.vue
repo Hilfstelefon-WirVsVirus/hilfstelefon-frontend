@@ -13,6 +13,9 @@
           <h2 class="listings-content__title">
             {{ $t('dashboard.open_requests')}}
           </h2>
+          <ul>
+            <li v-for="task in allTasks" :key="task.id">{{ task.transcription }}</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -20,9 +23,23 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'Dashboard',
+  methods: {
+    ...mapActions([
+      'setTasks',
+    ]),
+  },
+  computed: {
+    ...mapGetters([
+      'allTasks',
+    ]),
+  },
+  mounted() {
+    this.setTasks();
+  },
 };
 </script>
 
